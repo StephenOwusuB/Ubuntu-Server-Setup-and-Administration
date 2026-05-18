@@ -1,12 +1,14 @@
 # Ubuntu Server Setup, Deployment and Management
 
 ## Table of Contents
-- [Objectives](#objectives)
-- [Languages and Utilities](#languages-and-utilities-used)
-- [Environment](#environment)
-- [Project Walk-Through](#project-walk-through)
-- [Skills Learned](#skills-learned)
-- [Acknowledgments](#acknowledgments)
+- [Ubuntu Server Setup, Deployment and Management](#ubuntu-server-setup-deployment-and-management)
+  - [Table of Contents](#table-of-contents)
+  - [Objectives](#objectives)
+  - [Languages and Utilities Used](#languages-and-utilities-used)
+  - [Environment](#environment)
+  - [Project Walk-Through](#project-walk-through)
+  - [Skills Learned](#skills-learned)
+  - [Acknowledgments](#acknowledgments)
 
 ## Objectives
 
@@ -31,46 +33,42 @@ To set up a Ubuntu Server 26.04 LTS environment and secure it, you will need the
 
 ## Project Walk-Through
 
-1. **Download Ubuntu Server 26.04 LTS from: https://ubuntu.com/download/server**  
+1. **Download Ubuntu Server 26.04 LTS from: https://ubuntu.com/download/server#manual-install-tab**  
     ![Ubuntu Install](images/ubuntu%20install.jpg)
 
-2. **Create a new virtual machine in VirtualBox and install Ubuntu Server 26.04 LTS.**  
+2. **Download and Install VirtualBox from: https://virtualbox.com**
     ![VirtualBox](images/virtualbox.jpg)
 
-3. **Navigate to the Microsoft Admin Center and choose the 'Setup' option.**  
-    ![Microsoft Admin Center](images/click%20on%20setup.jpg)
+3. **Create a new virtual machine in VirtualBox and install Ubuntu Server 26.04 LTS.**  
+    <b>The first thing I am going to do is enter a name for the server, under folder select the dropdown and select other, decide where you want to create your ubuntu server folder to store the files, select ISO image and under that option select the ubuntu iso image, next select skip unattended installation and select next,choose the base memory of your choice. i will go with 8192, choose the processor of your choice. i will go with 4, leave enable efi unchecked select next, select the disk size of your choice. i will go with 80gb, select next to finish the virtual box ubuntu server setup.
+    </b>
+    ![VirtualBox](images/virtualbox.jpg)
 
-4. **Select "Get your custom domain set up".**  
-    ![Custom Domain](images/select%20get%20your%20custom%20domain%20setup.jpg)
-
-5. **Click on 'Get Started' to add your custom domain.**  
-    ![Setup Custom Domain](images/setup%20custom%20domain%20for%20mail.png)
-
-6. **If your custom domain is not visible, select 'Add Domain' to integrate it.**  
+4. **If your custom domain is not visible, select 'Add Domain' to integrate it.**  
     ![Add Domain](images/click%20on%20add%20domain.png)
 
-7. **Choose your preferred method for connecting your domain.**  
+5. **Choose your preferred method for connecting your domain.**  
     ![Add Domain to Email](images/add%20domain%20to%20your%20email%20setup.png)
 
-8. **Copy the three records (MX, TXT, and CNAME) and add them to your domain registrar.**  
+6. **Copy the three records (MX, TXT, and CNAME) and add them to your domain registrar.**  
     ![Add DNS Records](images/add%20dns%20records%20in%20365.png)
 
-9. **Refresh the page, and you should see the domain status change to 'Healthy'.**  
+7. **Refresh the page, and you should see the domain status change to 'Healthy'.**  
     ![Health Status](images/health%20status%20green%20check.png)
 
-10. **Verify SPF Setup**: Open [MXToolbox](https://mxtoolbox.com), change the search type to 'SPF Lookup', and enter your domain.  
+8.  **Verify SPF Setup**: Open [MXToolbox](https://mxtoolbox.com), change the search type to 'SPF Lookup', and enter your domain.  
     ![Verify SPF](images/verify%20spf%20was%20setup%20successfully%20.png)
 
-11. **Proceed to set up DKIM**.  
+9.  **Proceed to set up DKIM**.  
     ![DKIM Setup](images/click%20on%20security%20for%20DKIM.png)
 
-12. **Create DKIM keys and add CNAME records to your domain registrar.**  
+10. **Create DKIM keys and add CNAME records to your domain registrar.**  
     ![Create DKIM Keys](images/create%20DKIM%20keys.png)
 
-13. **Enable DKIM signing.**  
+11. **Enable DKIM signing.**  
     ![Enable DKIM](images/successful%20enabled%20sign%20messages.png)
 
-14. **Configure DMARC**: Create a TXT record in your domain registrar and monitor the email system for any issues.  
+12. **Configure DMARC**: Create a TXT record in your domain registrar and monitor the email system for any issues.  
     ![DMARC Success](images/successful%20email%20received.png)
 
 ## Skills Learned
